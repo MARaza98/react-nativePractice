@@ -192,28 +192,54 @@
 // }
 
 
+// import React from 'react'
+// import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+// import Ionicons from 'react-native-vector-icons/Ionicons'
+
+// const Tab = createMaterialBottomTabNavigator();
+
+// import mainpage from './mainpage'
+// import setting from './setting'
+// import contact from './contact'
+
+// export default function Home() {
+//   return (
+//     <Tab.Navigator barStyle={{ backgroundColor: '#694fad' }}   activeColor="white"   initialRouteName="Home" shifting={'true'}>
+//     <Tab.Screen name="mainpage" component={mainpage} options={{tabBarIcon:() => <PhotoNavbar name='home' /> ,
+//      tabBarColor:'red'}}/>
+//     <Tab.Screen name="setting" component={setting} options={{tabBarIcon:() => <PhotoNavbar name='settings' />,
+//      tabBarColor:'gray'}}/>
+//     <Tab.Screen name="contact" component={contact} options={{tabBarIcon:() => <PhotoNavbar name='call-outline' />,
+//      tabBarColor:'pink'}}/>
+//   </Tab.Navigator>
+// );
+  
+// }
+
+// const PhotoNavbar = props => {
+//   return <Ionicons name={props.name} size={20}/>
+// }
+
+
+
 import React from 'react'
-import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons'
 
-const Tab = createMaterialBottomTabNavigator();
+const Tab = createMaterialTopTabNavigator();
 
 import mainpage from './mainpage'
 import setting from './setting'
 import contact from './contact'
-
 export default function Home() {
   return (
-    <Tab.Navigator barStyle={{ backgroundColor: '#694fad' }}   activeColor="white"   initialRouteName="Home" shifting={'true'}>
-    <Tab.Screen name="mainpage" component={mainpage} options={{tabBarIcon:() => <PhotoNavbar name='home' /> ,
-     tabBarColor:'red'}}/>
-    <Tab.Screen name="setting" component={setting} options={{tabBarIcon:() => <PhotoNavbar name='settings' />,
-     tabBarColor:'gray'}}/>
-    <Tab.Screen name="contact" component={contact} options={{tabBarIcon:() => <PhotoNavbar name='call-outline' />,
-     tabBarColor:'pink'}}/>
+    <Tab.Navigator>
+    <Tab.Screen name="mainpage" component={mainpage} options={{tabBarIcon:() => <PhotoNavbar name='home' />}} />
+    <Tab.Screen name="Settings" component={setting} options={{tabBarIcon:() => <PhotoNavbar name='settings' />}}/>
+    <Tab.Screen name="contact" component={contact} options={{tabBarIcon:() => <PhotoNavbar name='call-outline' />}}/>
+
   </Tab.Navigator>
-);
-  
+  )
 }
 
 const PhotoNavbar = props => {
