@@ -245,3 +245,6 @@ export default function Home() {
 const PhotoNavbar = props => {
   return <Ionicons name={props.name} size={20}/>
 }
+
+
+

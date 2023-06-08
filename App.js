@@ -303,57 +303,25 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { View, Text } from 'react-native';
-import { createDrawerNavigator } from '@react-navigation/drawer';
+
 
 // screen import links
 import homeScreen from './screen/home';
-
+import Login from './screen/login';
+import SignUpScreen from './screen/signup';
 const Stack = createNativeStackNavigator();
 
 function App() {
   return (
     <NavigationContainer >
       <Stack.Navigator screenOptions={{headerShown: false}}>
-        <Stack.Screen name="Home" component={homeScreen} />
+        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="homeScreen" component={homeScreen} />
+        <Stack.Screen name="SignUpScreen" component={SignUpScreen} />
+
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
 export default App;
 
-
-// function Feed() {
-//   return (
-//     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-//       <Text>Feed Screen</Text>
-//     </View>
-//   );
-// }
-
-// function Article() {
-//   return (
-//     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-//       <Text>Article Screen</Text>
-//     </View>
-//   );
-// }
-
-// const Drawer = createDrawerNavigator();
-
-// function MyDrawer() {
-//   return (
-//     <Drawer.Navigator>
-//       <Drawer.Screen name="Feed" component={Feed} />
-//       <Drawer.Screen name="Article" component={Article} />
-//     </Drawer.Navigator>
-//   );
-// }
-
-// export default function App() {
-//   return (
-//     <NavigationContainer>
-//       <MyDrawer />
-//     </NavigationContainer>
-//   );
-// }
